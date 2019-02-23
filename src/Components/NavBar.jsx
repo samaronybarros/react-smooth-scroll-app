@@ -45,8 +45,6 @@ const NavLink = styled.li`
   }
 `
 
-const Span = styled.span``
-
 /**
  * Create a navbar containing a link list
  * that redirects to correct div
