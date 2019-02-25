@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link, animateScroll as scroll } from 'react-scroll'
 
-import Logo from './Logo'
+import Logo from '../Logo'
 
-import defaultLogo from '../Image/logo.svg'
+import defaultLogo from '../../Image/logo.svg'
+import Style from '../../Style'
 
 const Container = styled.nav`
-  background-color: var(--off-white);
+  background-color: ${Style.navBgColor};
   position: sticky;
   top: 0px;
   width: 100%;
   height: 80px;
-  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px 0 ${Style.navShadowColor};
 `
 
 const Content = styled.div`
@@ -31,17 +32,17 @@ const NavWrapper = styled.ul``
 const NavLink = styled.li`
   display: inline;
   margin-left: 2rem;
-  color: #333;
+  color: ${Style.navTextColor};
   float: left;
 
   &:hover {
-    color: black;
-    text-shadow: 0 0 3px #61dbfb;
+    color: ${Style.hoverTextColor};
+    text-shadow: 0 0 3px ${Style.hoverShadowColor};
     cursor: pointer;
   }
 
   & > .active {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid ${Style.navTextColor};
   }
 `
 
@@ -80,7 +81,7 @@ class NavBar extends Component {
     return (
       <Container>
         <Content>
-          <Logo logo={logo} alt={'Logo'} onClick={this.scrollToTop} width={150} height={150} />
+          <Logo logo={logo} onClick={this.scrollToTop} width={150} height={150} />
 
           <NavWrapper>
             {list.map(l => (
