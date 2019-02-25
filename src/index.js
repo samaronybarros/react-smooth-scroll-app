@@ -11,9 +11,7 @@ import './Style/index.css'
 
 import listItems from './Constants/fakeList'
 
-const Application = styled.div`
-  --off-white: #fafafa;
-`
+const Application = styled.div``
 /**
  * Main Application
  *

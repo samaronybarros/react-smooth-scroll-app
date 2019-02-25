@@ -29,7 +29,15 @@ class Logo extends Component {
     /**
      * Gets called when the user clicks on the image
      */
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    /**
+     * Logo's width
+     */
+    width: PropTypes.number,
+    /**
+     * Logo's heigth
+     */
+    height: PropTypes.number
   }
 
   static defaultProps = {

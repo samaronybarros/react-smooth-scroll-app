@@ -81,17 +81,11 @@ class NavBar extends Component {
       <Container>
         <Content>
           <Logo logo={logo} alt={'Logo'} onClick={this.scrollToTop} width={150} height={150} />
+
           <NavWrapper>
             {list.map(l => (
               <NavLink key={l.id}>
-                <Link
-                  activeClass={'active'}
-                  to={l.id}
-                  spy
-                  smooth
-                  offset={-70}
-                  duration={l.duration}
-                >
+                <Link to={l.id} spy smooth offset={-70} duration={l.duration}>
                   {l.title}
                 </Link>
               </NavLink>
