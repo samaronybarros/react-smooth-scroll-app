@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import Style from '../../Style'
+
 const Container = styled.div`
-  background: ${props => (props.dark ? '#333' : '#FFF')};
-  color: ${props => (props.dark ? '#FFF' : '#333')};
+  background: ${props => (props.dark ? Style.darkBgColor : Style.lightBgColor)};
+  color: ${props => (props.dark ? Style.darkTextColor : Style.lightTextColor)};
 `
 
 const Content = styled.div`
@@ -14,11 +16,11 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  text-align: center;
+  text-align: ${Style.sectionTitleAlign};
 `
 
 const Paragraph = styled.p`
-  text-align: justify;
+  text-align: ${Style.sectionParagraphAlign};
 `
 
 /**

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+import Style from '../../Style'
+
 const Image = styled.img`
   height: ${props => `${props.height}px`};
   width: ${props => `${props.width}px`};
@@ -42,8 +44,8 @@ class Logo extends Component {
 
   static defaultProps = {
     alt: 'Logo',
-    width: 60,
-    height: 60
+    width: Style.logoDefaultWidth,
+    height: Style.logoDefaultHeight
   }
 
   render () {
