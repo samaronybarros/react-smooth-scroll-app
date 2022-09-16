@@ -1,0 +1,29 @@
+stages:
+    - test
+    - build
+    - deploy
+test project:
+    stage: test
+    image: node:16.17
+    script: 
+        - npm install
+        - npm uninstall jest-enzyme
+        - npm test
+
+build projects:
+    stage: build
+    image: node:16.17
+    script: 
+        - npm install
+        - npm uninstall jest-enzyme
+        - npm run build
+    artifacts:
+        paths:
+            - build/
+netlify:
+    stage: deploy
+    image: node:16.17
+    script: 
+        - npm install -g netlify-cli
+        - netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --dir=build --prod
+
